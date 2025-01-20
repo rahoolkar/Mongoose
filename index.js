@@ -83,9 +83,25 @@ const User = mongoose.model("User",userSchema); //mongoose method takes 2 argumn
 
 //update in mongoose
 
-User.updateOne({age:{$lte:20}},{age:20})
+// User.updateOne({age:{$lte:20}},{age:20})
+// .then((result)=>{
+//     console.log(result);
+// }).catch((error)=>{
+//     console.log(error);
+// })
+
+//find and update method in mongoose
+
+// User.findOneAndUpdate({name:"utpalkar"},{age:56},{new:true}).then((result)=>{
+//     console.log(result);
+// }).catch((error)=>{
+//     console.log(error);
+// })
+
+User.findByIdAndUpdate('678e04515df7fcd45e8f0cfd',{age:45},{new:true})
 .then((result)=>{
     console.log(result);
 }).catch((error)=>{
     console.log(error);
 })
+
