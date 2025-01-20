@@ -20,3 +20,5 @@ const userSchema = new mongoose.Schema({
     age:Number
 })
 
+//creating a collection 
+const User = mongoose.model("User",userSchema); //mongoose method takes 2 argumnets 1. collection name 2.collection schema
