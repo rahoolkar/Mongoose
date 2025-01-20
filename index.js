@@ -98,10 +98,41 @@ const User = mongoose.model("User",userSchema); //mongoose method takes 2 argumn
 //     console.log(error);
 // })
 
-User.findByIdAndUpdate('678e04515df7fcd45e8f0cfd',{age:45},{new:true})
-.then((result)=>{
-    console.log(result);
+// User.findByIdAndUpdate('678e04515df7fcd45e8f0cfd',{age:45},{new:true})
+// .then((result)=>{
+//     console.log(result);
+// }).catch((error)=>{
+//     console.log(error);
+// }) 
+
+//delete in mongoose
+
+//deleteOne method
+// User.deleteOne({name:"rahulkar"}).then((result)=>{
+//     console.log(result); //this returns count
+// }).catch((error)=>{
+//     console.log(error);
+// })
+
+
+// //deleteMany Method
+// User.deleteMany(({age:45})).then((result)=>{
+//     console.log(result);
+// }).catch((error)=>{
+//     console.log(error);
+// })
+
+
+//findByIdAndDelete Method
+User.findByIdAndDelete("678e04515df7fcd45e8f0cfc").then((result)=>{
+    console.log(result); //returns the deleted document
 }).catch((error)=>{
     console.log(error);
 })
 
+//findOneAndDelete Method 
+User.findOneAndDelete({age:20}).then((result)=>{
+    console.log(result);
+}).catch((error)=>{
+    console.log(error);
+})
