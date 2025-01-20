@@ -25,13 +25,50 @@ const User = mongoose.model("User",userSchema); //mongoose method takes 2 argumn
 
 
 //inserting a data in database (single data)
-const user1data = new User({name:"rahulkar",email:"rahul@gmail.com",age:23});
+// const user1data = new User({name:"rahulkar",email:"rahul@gmail.com",age:23});
 
-//saving the document -> return a promise
-user1data.save()
+// //saving the document -> return a promise
+// user1data.save()
+// .then((result)=>{
+//     console.log(result); //this will print the whole entry in the collection
+// })
+// .catch((error)=>{
+//     console.log(error);
+// })
+
+// //inserting multiple data into the database 
+// User.insertMany([{
+//     name:"udayankar",
+//     email:"udayan@gmail.com",
+//     age:17
+// },{
+//     name:"utpalkar",
+//     email:"utpal@gmail.com",
+//     age:17
+// },{
+//     name:"amritakar",
+//     email:"amrita@gmail.com",
+//     age:17
+// }]).then((result)=>{
+//     console.log(result);
+// }).catch((error)=>{
+//     console.log(error);
+// })
+
+//find in mongoose
+
+//find bina kisi condition ke
+// User.find({}).then((result)=>{
+//     console.log(result);
+// }).catch((error)=>{
+//     console.log(error);
+// })
+
+//find method with conditions
+User.find({age:{$lte:20}})
 .then((result)=>{
-    console.log(result); //this will print the whole entry in the collection
+    console.log(result);
 })
 .catch((error)=>{
     console.log(error);
-})
+});
