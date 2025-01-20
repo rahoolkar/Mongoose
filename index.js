@@ -65,10 +65,27 @@ const User = mongoose.model("User",userSchema); //mongoose method takes 2 argumn
 // })
 
 //find method with conditions
-User.find({age:{$lte:20}})
+// User.find({age:{$lte:20}})
+// .then((result)=>{
+//     console.log(result);
+// })
+// .catch((error)=>{
+//     console.log(error);
+// });
+
+//findOne Method
+// User.findOne({age:17}).then((result)=>{
+//     console.log(result);
+//     console.log(result.name);
+// }).catch((error)=>{
+//     console.log(error)
+// })
+
+//update in mongoose
+
+User.updateOne({age:{$lte:20}},{age:20})
 .then((result)=>{
     console.log(result);
-})
-.catch((error)=>{
+}).catch((error)=>{
     console.log(error);
-});
+})
